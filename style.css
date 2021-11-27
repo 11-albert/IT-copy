@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ header{
+     z-index: 999;
+     position: absolute;
+     top: 0;
+     left: 0;
+     padding: 25px 50px;
+     display: flex;
+     width: 100%;
+     justify-content: space-between;
+     align-items: center;
+     transition: 0.5s ease;
+     
+     
+ }
+ header .logo{
+   
+     color: #fff;
+     font-size: 1.5em;
+     text-decoration: none;
+     font-weight: 700;
+     text-transform: uppercase;
+ }
+ header .nav{
+     position: relative;
+ }
+ header .nav .nav-items a{
+     position: relative;
+     color: #fff;
+     font-size: 1em;
+     font-weight: 500;
+     text-transform: capitalize;
+     text-decoration: none;
+     margin-left: 30px;
+     transition: 0.3 ease;
+ }
+ header .nav .nav-items a:before{
+     content: "";
+     position: absolute;
+     background: #fff;
+     width: 0;
+     height: 3px;
+     bottom: 0;
+     left: 0;
+     transition: 0.3s ease;
+ }
+ header .nav .nav-items a:hover:before{
+     width: 100%;
+ }
+ section{
+     padding: 100px 200px;
+ }
+ .home{
+     position: relative;
+     width: 100%;
+     min-height: 100vh;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     background: chartreuse;
+ }
+ .home video{
+     z-index: 000;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   
+ }
+ #hover{
+     transition: 0.5s ease;
+ }
+#hover:hover{
+    transform: scale(1.3);
+    
+}
+#hover .hover:hover{
+    background: rgb(68, 219, 194);
+}
+
+.loading{
+    
+    padding: 70px;
+    width: 100%;
+}
+
+.loading button{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s linear;
+}
+.loading button::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #555;
+    border-radius: 20%;
+    transform: translateX(-100%);
+    transition: 0.3s linear;
+}
+.loading button:hover:before{
+    transform: translateX(0);
+    z-index: -1;
+}
+.loading button:hover{
+    color: #fff;
+}

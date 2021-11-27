@@ -1,0 +1,1865 @@
+/*$(document).ready(function(e) {
+  //Create a var to store the index of red element
+var count = -1;
+function AddRedClass() {
+  var boxes = $('.nav-tabs li');
+  var boxLength = boxes.length - 1;
+  //Check if the actual item isn't more than the length then add 1 otherway restart to 0
+  count < boxLength ? count++ : count=0;
+  //Remove the class and add it to the new target
+ boxes.removeClass('red').eq(count).addClass('red');
+ if(boxes.eq(count).find("h3").html() == "Digital Marketing"){
+  $("#02").click();
+  }
+
+  if(boxes.eq(count).find("h3").html() == "IT Hardware"){
+ $("#03").click();
+ }
+ if(boxes.eq(count).find("h3").html() == "Print And Packaging"){
+   $("#04").click();
+  }
+
+}
+
+
+
+setInterval(AddRedClass, 9000);
+
+});
+
+*/
+
+
+
+
+var b = 0;
+
+    $(window).scroll(function() {
+
+
+
+        var oTop = $('#counter').offset().top - window.innerHeight;
+
+        if (b == 0 && $(window).scrollTop() > oTop) {
+
+            $('.counter-value').each(function() {
+
+                var $this = $(this),
+
+                    countTo = $this.attr('data-count');
+
+                $({
+
+                    countNum: $this.text()
+
+                }).animate({
+
+                        countNum: countTo
+
+                    },
+
+
+
+                    {
+
+
+
+                        duration: 2000,
+
+                        easing: 'swing',
+
+                        step: function() {
+
+                            $this.text(Math.floor(this.countNum));
+
+                        },
+
+                        complete: function() {
+
+                            $this.text(this.countNum);
+
+                            //alert('finished');
+
+                        }
+
+
+
+                    });
+
+            });
+
+            a = 0;
+
+        }
+
+
+
+    });
+
+
+    
+
+	
+
+
+
+
+
+$(document).ready(function(e) {
+
+    var pathname = window.location.pathname;
+
+  if(pathname == "/about-us"){
+
+    about_us_function();
+
+  }
+
+  if(pathname == "/news-events"){
+
+    news_events_function();
+
+  }
+
+  if(pathname == "/careers"){
+
+    Careers_function();
+
+  }
+
+  if(pathname == "/contact-us"){
+
+    contact_us_function();
+
+  }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function(e) {
+
+setTimeout(function(){
+
+$(".hide_show_over").fadeOut();
+
+
+
+var  video = document.getElementById("videoPlayer");
+
+
+
+video.pause();
+
+
+
+video.currentTime = 0;
+
+
+
+video.play();
+
+
+
+},7000)
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+function navigation(){
+
+
+
+  $(".navigation_right").slideToggle();
+
+
+
+  $(".hamburger-box").toggleClass("is-active");
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+$("#navigation_open").click(function(e) {
+
+
+
+  navigation();
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function home_function(){
+
+   navigation();
+
+    $(".hide_show_over").animate({
+
+        width: "toggle"
+
+    });
+
+     $("html, body").animate({ scrollTop: 0 }, "slow");
+
+    $(".home_main").slideDown();
+
+    $('.overlay_main').hide();
+	
+	
+	document.title = "Digital Technology Services & IT Solutions | Salsoft Technologies";
+	$("meta[name=description]").attr('content',"Digital technology solutions have transformed the world with increased customer expectations. Salsoft technologies partner with you in providing high end Digital Solutions to all your Needs");
+
+	 window.history.replaceState(null, null, "/");
+
+    setTimeout(function() {
+
+        $(".hide_show_over").animate({
+
+            width: "toggle"
+
+        });
+
+     },2000);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function about_us_function(){
+
+ navigation();
+
+    $(".hide_show_over").animate({
+
+        width: "toggle"
+
+    });
+
+    $(".home_main").slideUp();
+
+     $("html, body").animate({ scrollTop: 0 }, "slow");
+
+    $('.overlay_main').load("about-us.html").slideDown();
+
+  window.history.replaceState(null, null, "about-us");
+  
+  document.title = "Leading Digital Service Provider | Salsoft Technologies";
+	$("meta[name=description]").attr('content',"Salsoft Technologies is all about digital solutions for your business using high end digital technology skills and expertise during all levels of the workflow.");
+	
+	
+
+    setTimeout(function() {
+
+        $(".hide_show_over").animate({
+
+            width: "toggle"
+
+        });
+
+
+
+    },2000);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function news_events_function(b){
+
+   navigation();
+
+    $(".hide_show_over").animate({
+
+        width: "toggle" 
+
+    });
+
+    $(".home_main").slideUp();
+
+     $("html, body").animate({ scrollTop: 0 }, "slow");
+
+    $('.overlay_main').load("news-events.html").slideDown();
+
+	  window.history.replaceState(null, null, "news-events");
+	  
+	  
+  document.title = "News & Events happening at Salsoft Technologies";
+	$("meta[name=description]").attr('content',"All the information and happenings at Salsoft Technologies which is a leading digital service and solutions provider for all your digital business needs");
+	  
+
+  setTimeout(function() {
+
+	   slider();
+
+	   var events =  $(b).attr("data-event");
+
+		if(events == "event_one"){
+
+		  }
+
+		if(events == "event_two"){
+
+		  $("#tab_six").click();
+
+		}
+
+		if(events == "event_three"){
+
+		  $("#tab_five").click();
+
+		}
+
+		if(events == "event_two"){
+
+	 	 $("#tab_six").click();
+
+		}
+
+		if(events == "event_four"){
+
+		  $("#tab_three").click();
+
+		}
+
+
+
+
+
+     },2000);
+
+
+
+   setTimeout(function() {
+
+
+
+        $(".hide_show_over").animate({
+
+
+
+            width: "toggle"
+
+
+
+        });
+
+
+
+     },2000);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function Careers_function(){
+
+
+
+    navigation();
+
+
+
+    $(".hide_show_over").animate({
+
+
+
+        width: "toggle"
+
+
+
+    });
+
+
+
+    $(".home_main").slideUp();
+
+
+
+     $("html, body").animate({ scrollTop: 0 }, "slow");
+
+
+
+    $('.overlay_main').load("career.html").slideDown();
+
+
+
+  window.history.replaceState(null, null, "careers");
+  
+    document.title = "Explore Careers and Job Opportunities at Salsoft Technologies";
+	$("meta[name=description]").attr('content',"Join Salsoft Technologies’ Digital workspace to grow your career and leave your digital mark in the ever-evolving digital world through digital transformation");
+
+
+
+    setTimeout(function() {
+
+
+
+        $(".hide_show_over").animate({
+
+
+
+            width: "toggle"
+
+
+
+        });
+
+
+
+    },2000);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function contact_us_function(){
+
+
+
+    navigation();
+
+
+
+    $(".hide_show_over").animate({
+
+
+
+        width: "toggle"
+
+
+
+    });
+
+
+
+    $(".home_main").slideUp();
+
+
+
+     $("html, body").animate({ scrollTop: 0 }, "slow");
+
+
+
+    $('.overlay_main').load("contact.html").slideDown();
+
+
+
+    window.history.replaceState(null, null, "contact-us");
+	
+	    document.title = "Contact Salsoft Technologies | Get in Touch via Call or Email ";
+	$("meta[name=description]").attr('content',"Reach out to Salsoft Technologies for all your inquiries related to our digital workspace and our representative will get back to you with a response! ");
+
+
+
+    setTimeout(function() {
+
+
+
+        $(".hide_show_over").animate({
+
+
+
+            width: "toggle"
+
+
+
+        });
+
+
+
+    },2000);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function apply_now(a){
+
+
+
+  
+
+
+
+  var section_job =  $(a).attr("data-job-details");
+
+
+
+      navigation();
+
+
+
+    $(".hide_show_over").animate({
+
+
+
+        width: "toggle"
+
+
+
+    });
+
+
+
+    $(".home_main").slideUp();
+
+
+
+   $("html, body").animate({ scrollTop: 0 }, "slow");
+
+
+
+    $('.overlay_main').load("career-details.html #"+section_job).slideDown();
+
+
+
+    setTimeout(function() {
+
+
+
+        $(".hide_show_over").animate({
+
+
+
+            width: "toggle"
+
+
+
+        });
+
+
+
+    },2000);
+
+
+
+
+
+
+
+  
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  $.fn.extend({
+
+
+
+
+
+
+
+    animateCss: function (animationName) {
+
+
+
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+
+
+        $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+
+
+
+            $(this).removeClass('animated ' + animationName);
+
+
+
+        });
+
+
+
+    }
+
+
+
+});
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ wow = new WOW(
+
+
+
+
+
+
+
+      {
+
+
+
+
+
+
+
+        animateClass: 'animated',
+
+
+
+
+
+
+
+        offset:       100,
+
+
+
+
+
+
+
+        callback:     function(box) {
+
+
+
+
+
+
+
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+    );
+
+
+
+
+
+
+
+    wow.init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function slider(){
+
+
+
+
+
+ $(".slider_for_event_0").slick({
+
+  slidesToShow: 1,
+
+  slidesToScroll: 1,
+
+  arrows: true,
+
+  fade: true,
+
+  asNavFor: ".slider_nav_event_0"
+
+});
+
+$(".slider_nav_event_0").slick({
+
+  slidesToShow: 4,
+
+  slidesToScroll: 1,
+
+  asNavFor: ".slider_for_event_0",
+
+  dots: false,  
+
+  autoplay:true,
+
+  focusOnSelect: true
+
+});
+
+
+
+ $(".slider_for_event_1").slick({
+
+  slidesToShow: 1,
+
+  slidesToScroll: 1,
+
+  arrows: true,
+
+  fade: true,
+
+  asNavFor: ".slider_nav_event_1"
+
+});
+
+$(".slider_nav_event_1").slick({
+
+  slidesToShow: 4,
+
+  slidesToScroll: 1,
+
+  asNavFor: ".slider_for_event_1",
+
+  dots: false,  
+
+  autoplay:true,
+
+  focusOnSelect: true
+
+});
+
+
+
+ $(".slider_for_event_2").slick({
+
+  slidesToShow: 1,
+
+  slidesToScroll: 1,
+
+  arrows: true,
+
+  fade: true,
+
+  asNavFor: ".slider_nav_event_2"
+
+});
+
+$(".slider_nav_event_2").slick({
+
+  slidesToShow: 4,
+
+  slidesToScroll: 1,
+
+  asNavFor: ".slider_for_event_2",
+
+  dots: false,  
+
+  autoplay:true,
+
+  focusOnSelect: true
+
+});
+
+
+
+$(".slider_for_event_3").slick({
+
+  slidesToShow: 1,
+
+  slidesToScroll: 1,
+
+  arrows: true,
+
+  fade: true,
+
+  asNavFor: ".slider_nav_event_3"
+
+});
+
+$(".slider_nav_event_3").slick({
+
+  slidesToShow: 4,
+
+  slidesToScroll: 1,
+
+  asNavFor: ".slider_for_event_3",
+
+  dots: false,  
+
+  autoplay:true,
+
+  focusOnSelect: true
+
+});
+
+
+
+$(".slider_for_event_4").slick({
+
+  slidesToShow: 1,
+
+  slidesToScroll: 1,
+
+  arrows: true,
+
+  fade: true,
+
+  asNavFor: ".slider_nav_event_4"
+
+});
+
+$(".slider_nav_event_4").slick({
+
+  slidesToShow: 4,
+
+  slidesToScroll: 1,
+
+  asNavFor: ".slider_for_event_4",
+
+  dots: false,  
+
+  autoplay:true,
+
+  focusOnSelect: true
+
+});
+
+
+
+$(".slider_for_event_5").slick({
+
+  slidesToShow: 1,
+
+  slidesToScroll: 1,
+
+  arrows: true,
+
+  fade: true,
+
+  asNavFor: ".slider_nav_event_5"
+
+});
+
+$(".slider_nav_event_5").slick({
+
+  slidesToShow: 4,
+
+  slidesToScroll: 1,
+
+  asNavFor: ".slider_for_event_5",
+
+  dots: false,  
+
+  autoplay:true,
+
+  focusOnSelect: true
+
+});
+
+
+
+$(".slider_for_event_6").slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: true,
+  asNavFor: ".slider_nav_event_6"
+});
+
+$(".slider_nav_event_6").slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  asNavFor: ".slider_for_event_6",
+  dots: false,  
+  autoplay:true,
+  focusOnSelect: true
+});
+
+
+
+$(".slider_for_event_7").slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: true,
+  asNavFor: ".slider_nav_event_7"
+});
+
+$(".slider_nav_event_7").slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  asNavFor: ".slider_for_event_7",
+  dots: false,  
+  autoplay:true,
+  focusOnSelect: true
+});
+
+
+
+
+ var bigimage = $(".big");
+
+
+
+  var thumbs = $(".thumbs");
+
+
+
+  //var totalslides = 10;
+
+
+
+  var syncedSecondary = true;
+
+
+
+
+
+
+
+  bigimage.owlCarousel({
+
+
+
+    items: 1,
+
+
+
+    slideSpeed: 2000,
+
+
+
+    nav: true,
+
+
+
+    autoplay: true,
+
+
+
+    dots: false,
+
+
+
+    responsiveRefreshRate: 200,
+
+
+
+    navText: [
+
+
+
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+
+
+
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+
+
+
+    ]
+
+
+
+  })
+
+
+
+    .on("changed.owl.carousel", syncPosition);
+
+
+
+
+
+
+
+  thumbs
+
+
+
+    .on("initialized.owl.carousel", function() {
+
+
+
+    thumbs.find(".owl-item").eq(0).addClass("current");
+
+
+
+  })
+
+
+
+    .owlCarousel({
+
+
+
+    items: 4,
+
+
+
+    dots: true,
+
+
+
+    margin:15,
+
+
+
+    nav: true,
+
+
+
+    navText: [
+
+
+
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+
+
+
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+
+
+
+    ],
+
+
+
+    smartSpeed: 200,
+
+
+
+    slideSpeed: 500,
+
+
+
+    slideBy: 4,
+
+
+
+    responsiveRefreshRate: 100
+
+
+
+  })
+
+
+
+    .on("changed.owl.carousel", syncPosition2);
+
+
+
+
+
+
+
+  function syncPosition(el) {
+
+
+
+
+
+
+
+    var count = el.item.count - 1;
+
+
+
+    var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+
+
+
+
+
+
+    if (current < 0) {
+
+
+
+      current = count;
+
+
+
+    }
+
+
+
+    if (current > count) {
+
+
+
+      current = 0;
+
+
+
+    }
+
+
+
+    //to this
+
+
+
+    thumbs.find(".owl-item").removeClass("current").eq(current).addClass("current");
+
+
+
+    var onscreen = thumbs.find(".owl-item.active").length - 1;
+
+
+
+    var start = thumbs.find(".owl-item.active").first().index();
+
+
+
+    var end = thumbs.find(".owl-item.active").last().index();
+
+
+
+
+
+
+
+    if (current > end) {
+
+
+
+      thumbs.data("owl.carousel").to(current, 100, true);
+
+
+
+    }
+
+
+
+    if (current < start) {
+
+
+
+      thumbs.data("owl.carousel").to(current - onscreen, 100, true);
+
+
+
+    }
+
+
+
+  }
+
+
+
+
+
+
+
+  function syncPosition2(el) {
+
+
+
+    if (syncedSecondary) {
+
+
+
+      var number = el.item.index;
+
+
+
+      bigimage.data("owl.carousel").to(number, 100, true);
+
+
+
+    }
+
+
+
+  }
+
+
+
+
+
+
+
+  thumbs.on("click", ".owl-item", function(e) {
+
+
+
+    e.preventDefault();
+
+
+
+    var number = $(this).index();
+
+
+
+    bigimage.data("owl.carousel").to(number, 300, true);
+
+
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ var owl = $('#our_product .owl-carousel');
+
+
+
+  owl.owlCarousel({
+
+
+
+    loop:true,
+
+
+
+    nav:true,
+
+
+
+    slideSpeed : 2000,
+
+
+
+    dots: false,
+
+
+
+    dotsSpeed: 2000,
+
+
+
+    lazyLoad: true,
+
+
+
+    autoplay: true,
+
+
+
+    autoplaySpeed:  800,
+
+
+
+    margin:30,
+
+
+
+    responsive:{
+
+
+
+      0:{
+
+
+
+        items:1
+
+
+
+      },
+
+
+
+      600:{
+
+
+
+        items:2
+
+
+
+      },            
+
+
+
+
+
+
+
+      960:{
+
+
+
+
+
+
+
+        items:3
+
+
+
+
+
+
+
+      },
+
+
+
+
+
+
+
+      1200:{
+
+
+
+
+
+
+
+        items:3
+
+
+
+
+
+
+
+      }
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$('#carousel').carousel();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /***Fancy Box POPUP***/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $('.video_vimeo').fancybox();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $('.get_quote_form').fancybox();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+
+
+
+    var scrollPos = 0;
+
+
+
+    var Counter = 0;
+
+
+
+    $(window).scroll(function(){
+
+
+
+        var scrollPosCur = $(this).scrollTop();
+
+
+
+        if (scrollPosCur >= 1) {
+
+
+
+            if($(".hamburger-box").hasClass("is-active") == true){
+
+
+
+           console.log("true");
+
+
+
+         navigation();
+
+
+
+        }else{
+
+
+
+        console.log("false");
+
+
+
+          }
+
+
+
+      } else {
+
+
+
+            
+
+
+
+        }
+
+
+
+        scrollPos = scrollPosCur;
+
+
+
+    });
+
+
+
+});
